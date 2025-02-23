@@ -3,7 +3,9 @@
 SAMPLE application hello word with  Language C 
 ## Run MakeFile.m exemple :
 ```
-$ >: ./MakeFile.mk 
+$ >: make
+
+$ ./setup
 
 ```
 ## out : 
