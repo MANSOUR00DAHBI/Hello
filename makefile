@@ -1,6 +1,6 @@
 .PHONY: all clean 
 # Name My Program
-EXE= Setup
+EXE= Setup.exe
 
 # ALL OBJC Files
 OBJC= hello.o
