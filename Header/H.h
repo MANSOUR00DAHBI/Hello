@@ -3,7 +3,7 @@
 #define H_H 
 #include <stdio.h> // Include libiroy
 #define MAX_WORD 1000 // Maximun Word 
-int  Word_linght[MAX_WORD]; // Length Word Array 
+int  Word_lenght[MAX_WORD]; // Length Word Array 
 int length = 0;  // Lenght charachter 
 int nw;  // count Word 
 int line; // count new  line 
@@ -16,9 +16,9 @@ int RED(); // Read Input CHaracter
 #ifdef H_H
 
 int RED() {
-	extern int Word_linght[] , length , nw , line , c ;
+	extern int Word_lenght[] , length , nw , line , c ;
 	  while ((c = getchar()) != EOF && c != '^') {
-		Word_linght[++length] = c;
+		Word_lenght[++length] = c;
 		if (c == '\n') {
 			++line;
 		}
