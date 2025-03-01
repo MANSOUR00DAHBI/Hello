@@ -17,7 +17,7 @@ int RED(); // Read Input CHaracter
 
 int RED() {
 	extern int Word_lenght[] , length , nw , line , c ;
-	  while ((c = getchar()) != EOF && c != '^') {
+	  while ((c = getchar()) != EOF) {
 		Word_lenght[++length] = c;
 		if (c == '\n') {
 			++line;
