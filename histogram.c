@@ -7,6 +7,7 @@
 #define IN 1
 #define OUT 0 
 #define MAX_LENGHTS 20
+#define Symbole '\xdc'
 extern int Word_lenght [], length, nw, line, c;
 
 int lenght_Word[100 + 1]={0};
@@ -40,7 +41,7 @@ printf("\n");
 	for (int i = 0; i <= nw; i++) {
 		printf("%2d: ", i);
 		for (int j = 0; j <= lenghts[i]; j++) {
-			printf("* ");  // Use a block character for the bar
+			putchar(Symbole) ;//printf("* ");  // Use a block character for the bar
 		}
 		printf(" (%d) \n" , lenghts[i] + 1);
 	}
@@ -62,7 +63,7 @@ printf("\n");
 			if (lenghts[j] > 0) {  // Only show columns with data
 				printf(" ");
 				if (lenghts[j] >= i)
-					printf("*");  // Using block character for better visual
+					putchar(Symbole);//printf("*");  // Using block character for better visual
 				else
 					printf(" ");
 			}
