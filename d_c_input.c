@@ -21,6 +21,31 @@ int main() {
            feri_char[Word_lenght[i]]++;
 		}
 	}
+    // Print the horizontal histogram
+    printf("Character Frequency Histogram (Horizontal):\n");
+    for (int i = 0; i < NUM_CHARS; i++) {
+        if (feri_char[i] > 0) {
+            // Print the character (escape special characters)
+            if (i == '\n') {
+                printf("\\n : ");
+            }
+            else if (i == '\t') {
+                printf("\\t : ");
+            }
+            else if (i == ' ') {
+                printf("' ': ");
+            }
+            else {
+                printf("%2c : ", i);
+            }
+
+            // Print the bar for the frequency
+            for (int j = 0; j < feri_char[i]; j++) {
+                printf("%c ",Symbole);  // Use a block character for the bar
+            }
+            printf("\n");
+        }
+    }
      
     
   return 0;
