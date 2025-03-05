@@ -2,7 +2,7 @@
 /* Replacing Each Single  */
 #include "Header/H.h"
 #define H_H 
-extern int Word_lenght[], length, nw, line,c;
+extern int Word_length[], length, nw, line,c;
 
 
 
@@ -11,7 +11,7 @@ int main() {
 	RED();
 	printf("\n");
 	printf("*- Linght : %d Word : %d line : %d\n", length, nw, line);
-	Word_print_line( Word_lenght, length);
+	Word_print_line( Word_length, length);
 	printf("\n");
 	return 0;
 }

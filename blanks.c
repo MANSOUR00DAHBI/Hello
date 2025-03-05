@@ -8,6 +8,7 @@ int main() {
 	printf("\n");
 	printf("*- Linght : %d Word : %d line : %d\n", length, nw, line);
     add_Blanks(Word_length,length, BLANKS);
+
 	printf("\n");
 	return 0;
 }

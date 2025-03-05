@@ -14,7 +14,6 @@ int lengths[100 + 1 ] = {0} ; // array save word count
 int main() {
   
 
-    printf("Enter text (Ctrl+D or Ctrl+Z to end):\n");
 	RED();
 	printf("\n");
 	printf("*- Linght : %d Word : %d line : %d\n", length, nw + 1, line);

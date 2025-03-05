@@ -26,6 +26,7 @@ void print_With_Symbole(int Word_lenght[], int length);
 
 int RED() {
 	extern int Word_length[] , length , nw , line , c ;
+	printf("Enter text (Ctrl+D or Ctrl+Z to end):\n");
 	  while ((c = getchar()) != EOF) {
 		Word_length[++length] = c;
 		if (c == '\n') {
@@ -35,7 +36,7 @@ int RED() {
 			++nw;
 		}
 	}
-   return 0;
+   return c;
 }
 
 void Word_print_line(int Word_lenght[], int length) {
@@ -137,11 +138,11 @@ void Word_Length_Histogram_Horizontal(int Word_length[], int length, int lengths
 	// Print the horizontal histogram
 	printf("Word Length Histogram (Horizontal):\n");
 	for (int i = 0; i <= nw; i++) {
-		printf("%2d: ", i);
-		for (int j = 0; j <= lengths[i]; j++) {
+		printf("%2d: ", i + 1);
+		for (int j = 1; j <= lengths[i]; j++) {
 			putchar(Symbole);  // Use a block character for the bar
 		}
-		printf(" (%d) \n", lengths[i] + 1);
+		printf(" (%d) \n", lengths[i] );
 	}
 	printf("\n");
 }
@@ -173,7 +174,7 @@ void Vertical_Word_length_Histogram(int Word_length[], int length, int lengths[]
 	// Print Vertical Histogram
 	printf("\nVertical Word Length Histogram:\n\n");
 	for (int i = MAX_Word_length; i > 0; i--) {
-		printf(" |");
+		printf("%2d|",i);
 		for (int j = 0; j <= MAX_lengths; j++) {
 
 			if (lengths[j] > 0) {  // Only show columns with data
@@ -195,7 +196,7 @@ void Vertical_Word_length_Histogram(int Word_length[], int length, int lengths[]
 	printf("\n  ");
 	for (size_t i = 0; i < count_Array; i++)
 	{
-		printf("%2d", lengths[i] + 1);
+		printf("%3d", lengths[i]  );
 	}
 }
 

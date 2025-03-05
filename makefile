@@ -26,7 +26,7 @@ CFALGS= -Wall -Wextra -g
 LDFALGS= -lm 
 
 # Default Target 
-all: $(EXE) $(EXE1)    $(EXE4)  $(EXE5) $(EXE6) #$(EXE2)$(EXE3)
+all: $(EXE) $(EXE1)  $(EXE2) $(EXE3) $(EXE4)  $(EXE5) $(EXE6)
 
 # Links Executable.
 $(EXE): $(OBJC)
