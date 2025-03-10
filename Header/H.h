@@ -2,6 +2,10 @@
 #ifndef H_H 
 #define H_H 
 #include <stdio.h> // Include libiroy
+#include <stdlib.h>
+#include <string.h>
+
+
 #define MAX_WORD 1000 // Maximun Word 
 #define Symbole '\xdc'
 int  Word_length[MAX_WORD]; // Length Word Array 
@@ -9,12 +13,12 @@ int length = 0;  // Lenght charachter
 int nw;  // count Word 
 int line; // count new  line 
 int  c;  // charachter
-
+int get_line(char** line , size_t* size_buffer );
 int RED(); // Read Input CHaracter 
 void add_Blanks(int Word_lenght[], int length, int BLANKS);
-
 void Character_Frequency_Histogram(int Word_length[], int length, int Frequency_char[], int NUM_CHARS);
 void Vertical_Word_length_Histogram(int Word_length[], int length, int lengths[]);
+/* Word Length Histogram(Horizontal)*/
 void Word_Length_Histogram_Horizontal (int Word_length[], int length, int lengths[]);
 void Word_print_line(int Word_lenght[], int length);
 void print_With_Symbole(int Word_lenght[], int length);
@@ -23,6 +27,35 @@ void print_With_Symbole(int Word_lenght[], int length);
 #endif
 
 #ifdef H_H
+ 
+int get_line(char** line, size_t* size_buffer) {
+	int c;
+	size_t length = 0;
+
+	while ((c = getchar()) != EOF && c != '\n') {
+		if (length + 1 >= *size_buffer) {
+			*size_buffer *= 2;
+			*line = realloc(line, *size_buffer);
+			if (*line == NULL) {
+				fprintf(stderr, " Memory allocation failed \n");
+				return(1);
+			}
+		}
+		(*line)[length++] = c;
+	}
+	if (length + 1 >= *size_buffer) {
+		*size_buffer += 1;
+		*line = realloc(line, *size_buffer);
+		if (*line == NULL) {
+			fprintf(stderr, " Mamory allocation failed \n");
+
+			return 1;
+		}
+	}
+	(*line)[length] = '\0';
+	return length;
+}
+
 
 int RED() {
 	extern int Word_length[] , length , nw , line , c ;
@@ -50,6 +83,7 @@ void Word_print_line(int Word_lenght[], int length) {
 			printf("%c", Word_lenght[i]);
 	}
 }
+
 void print_With_Symbole(int Word_lenght[], int length) {
 	for (size_t i = 1; i <= length; i++)
 	{

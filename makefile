@@ -7,6 +7,7 @@ EXE3= WPL.exe
 EXE4= Hits.exe
 EXE5= Ch_Hex.exe
 EXE6= dcinput.exe
+EXE7= long_le.exe
 
 # ALL OBJC Files
 OBJC= hello.o
@@ -16,6 +17,7 @@ OBJC3= w_p_l.o
 OBJC4= histogram.o
 OBJC5= Ch_Hex.o
 OBJC6= d_c_input.o
+OBJC7= line_h.o
 
 # Compiler
 CC= gcc 
@@ -26,7 +28,7 @@ CFALGS= -Wall -Wextra -g
 LDFALGS= -lm 
 
 # Default Target 
-all: $(EXE) $(EXE1)  $(EXE2) $(EXE3) $(EXE4)  $(EXE5) $(EXE6)
+all: $(EXE) $(EXE1)  $(EXE2) $(EXE3) $(EXE4)  $(EXE5) $(EXE6) #$(EXE7)
 
 # Links Executable.
 $(EXE): $(OBJC)
@@ -50,6 +52,9 @@ $(EXE5): $(OBJC5)
 $(EXE6): $(OBJC6)
 	$(CC) $(CFALGS) -o $@  $^ $(LDFALGS)
 
+$(EXE7): $(OBJC7)
+	$(CC) $(CFALGS) -o $@  $^ $(LDFALGS)
+
 
 # Compiler Source Files
 %.o: %.c
@@ -57,7 +62,7 @@ $(EXE6): $(OBJC6)
 
 # Clean Files 
 clean:
-	rm -rfv $(EXE) $(OBJC) $(EXE1) $(OBJC1)  $(EXE2) $(OBJC2)  $(EXE3) $(OBJC3)  $(EXE4) $(OBJC4)  $(EXE5) $(OBJC5)  $(EXE6) $(OBJC6)
+	rm -rfv $(EXE) $(OBJC) $(EXE1) $(OBJC1)  $(EXE2) $(OBJC2)  $(EXE3) $(OBJC3) $(EXE4) $(OBJC4)  $(EXE5) $(OBJC5)  $(EXE6) $(OBJC6) $(EXE7) $(OBJC7)
 
 
 
