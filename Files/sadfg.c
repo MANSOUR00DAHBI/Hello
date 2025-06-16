@@ -1,12 +1,46 @@
 /* get line file LINE.c */ 
 #include "Header/H.h"
 #define H_H 
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+*/
 #define MAX_LINE_LENGTH 1000  // Maximum line length to store (can be adjusted)
- 
+/*
+int get_line_(char** line, size_t* size_buffer) {
+    int c;
+    size_t length = 0;
 
+    while ((c = getchar()) != EOF && c != '\n') {
+        if (length + 1 >= *size_buffer) {
+            *size_buffer *= 2;
+            *line = realloc(line, *size_buffer);
+            if (*line == NULL) {
+                fprintf(stderr, " Memory allocation failed \n");
+                return(1);
+            }
+        }
+        (*line)[length++] = c;
+    }
+    if (length + 1 >= *size_buffer) {
+        *size_buffer += 1;
+        *line = realloc(line, *size_buffer);
+        if (*line == NULL) {
+            fprintf(stderr, " Mamory allocation failed \n");
 
+            return 1;
+        }
+    }
+    (*line)[length] = '\0';
+    return length;
+}
+*/
 
 int main() {
+
+     ptr();
+    return 0;
 	char *longest_line = NULL;
     char *current_line = NULL;
     size_t longest_length = 0  ;
@@ -20,7 +54,7 @@ int main() {
     }
 
     // Read lines until EOF 
-    while ((current_length = get_line(&current_line, &size_buffer)) > 0) {
+    while ((current_length = get_line_(&current_line, &size_buffer)) > 0) {
         
         if (current_length > longest_length) {
             longest_length = current_length;
@@ -47,5 +81,4 @@ int main() {
     // Free allocated memory
     free(current_line);
     free(longest_line);
-    return 0;
 }

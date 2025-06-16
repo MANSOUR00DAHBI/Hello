@@ -13,15 +13,15 @@ int length = 0;  // Lenght charachter
 int nw;  // count Word 
 int line; // count new  line 
 int  c;  // charachter
-int get_line_(char** line, size_t* size_buffer);
-int getline(char s[], int lim);
+int get_line_(char** line , size_t* size_buffer );
+int getline (char s[], int lim );
 void copy(char to[], char from[]);
 int RED(); // Read Input CHaracter 
 void add_Blanks(int Word_lenght[], int length, int BLANKS);
 /* Word Length Histogram(Horizontal)*/
 void Character_Frequency_Histogram(int Word_length[], int length, int Frequency_char[], int NUM_CHARS);
 void Vertical_Word_length_Histogram(int Word_length[], int length, int lengths[]);
-void Word_Length_Histogram_Horizontal(int Word_length[], int length, int lengths[]);
+void Word_Length_Histogram_Horizontal (int Word_length[], int length, int lengths[]);
 void Word_print_line(int Word_lenght[], int length);
 void print_With_Symbole(int Word_lenght[], int length);
 
@@ -33,18 +33,18 @@ void ptr() {
 }
 int getline(char s[], int lim) {
 	while ((c = getchar()) != EOF && c != '\n' && length < lim + 1) {
-		s[length++] = c;
+		s[length++]= c ;
 		if (c == '\n') {
 			s[length++] = c;
-			s[length++] = '\0';
+			s[length++]= '\0';
 		}
 	}
-	return length;
+     return length ;
 }
 void copy(char to[], char from[]) {
-	int i = 0;
-	while ((to[i] = from[i]) != '\0')++i;
-	return i;
+	int i = 0 ;
+    while( (to[i] = from[i] ) != '\0')++i;
+    return i ;
 }
 int get_line_(char** line, size_t* size_buffer) {
 	int c;
@@ -76,9 +76,9 @@ int get_line_(char** line, size_t* size_buffer) {
 
 
 int RED() {
-	extern int Word_length[], length, nw, line, c;
+	extern int Word_length[] , length , nw , line , c ;
 	printf("Enter text (Ctrl+D or Ctrl+Z to end):\n");
-	while ((c = getchar()) != EOF) {
+	  while ((c = getchar()) != EOF) {
 		Word_length[++length] = c;
 		if (c == '\n') {
 			++line;
@@ -87,7 +87,7 @@ int RED() {
 			++nw;
 		}
 	}
-	return c;
+   return c;
 }
 
 void Word_print_line(int Word_lenght[], int length) {
@@ -140,37 +140,37 @@ void add_Blanks(int Word_length[], int length, int BLANKS) {
 }
 
 void Character_Frequency_Histogram(int Word_length[], int length, int Frequency_char[], int NUM_CHARS) {
-	for (int i = 0; i < length; i++)
-	{
-		if (Word_length[i] > 0 && Word_length[i] <= NUM_CHARS) {
-			Frequency_char[Word_length[i]]++;
-		}
-	}
-	// Print the horizontal histogram
-	printf("Character Frequency Histogram (Horizontal):\n");
-	for (int i = 0; i < NUM_CHARS; i++) {
-		if (Frequency_char[i] > 0) {
-			// Print the character (escape special characters)
-			if (i == '\n') {
-				printf("\\n : ");
-			}
-			else if (i == '\t') {
-				printf("\\t : ");
-			}
-			else if (i == ' ') {
-				printf("' ': ");
-			}
-			else {
-				printf("%2c : ", i);
-			}
+    for (int i = 0; i < length; i++)
+    {
+        if (Word_length[i] > 0 && Word_length[i] <= NUM_CHARS) {
+            Frequency_char[Word_length[i]]++;
+        }
+    }
+    // Print the horizontal histogram
+    printf("Character Frequency Histogram (Horizontal):\n");
+    for (int i = 0; i < NUM_CHARS; i++) {
+        if (Frequency_char[i] > 0) {
+            // Print the character (escape special characters)
+            if (i == '\n') {
+                printf("\\n : ");
+            }
+            else if (i == '\t') {
+                printf("\\t : ");
+            }
+            else if (i == ' ') {
+                printf("' ': ");
+            }
+            else {
+                printf("%2c : ", i);
+            }
 
-			// Print the bar for the frequency
-			for (int j = 0; j < Frequency_char[i]; j++) {
-				printf("%c ", Symbole);  // Use a block character for the bar
-			}
-			printf("\n");
-		}
-	}
+            // Print the bar for the frequency
+            for (int j = 0; j < Frequency_char[i]; j++) {
+                printf("%c ", Symbole);  // Use a block character for the bar
+            }
+            printf("\n");
+        }
+    }
 }
 
 void Word_Length_Histogram_Horizontal(int Word_length[], int length, int lengths[]) {
@@ -194,7 +194,7 @@ void Word_Length_Histogram_Horizontal(int Word_length[], int length, int lengths
 		for (int j = 1; j <= lengths[i]; j++) {
 			putchar(Symbole);  // Use a block character for the bar
 		}
-		printf(" (%d) \n", lengths[i]);
+		printf(" (%d) \n", lengths[i] );
 	}
 	printf("\n");
 }
@@ -226,7 +226,7 @@ void Vertical_Word_length_Histogram(int Word_length[], int length, int lengths[]
 	// Print Vertical Histogram
 	printf("\nVertical Word Length Histogram:\n\n");
 	for (int i = MAX_Word_length; i > 0; i--) {
-		printf("%2d|", i);
+		printf("%2d|",i);
 		for (int j = 0; j <= MAX_lengths; j++) {
 
 			if (lengths[j] > 0) {  // Only show columns with data
@@ -248,7 +248,7 @@ void Vertical_Word_length_Histogram(int Word_length[], int length, int lengths[]
 	printf("\n  ");
 	for (size_t i = 0; i < count_Array; i++)
 	{
-		printf("%3d", lengths[i]);
+		printf("%3d", lengths[i]  );
 	}
 }
 

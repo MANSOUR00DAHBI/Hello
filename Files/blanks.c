@@ -4,6 +4,7 @@
 extern int Word_length[], length, nw, line, c;
 
 int main() {
+     //ptr();
     RED();
 	printf("\n");
 	printf("*- Linght : %d Word : %d line : %d\n", length, nw, line);

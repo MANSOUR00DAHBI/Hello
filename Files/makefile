@@ -1,23 +1,23 @@
 .PHONY: all clean 
 # Name My Program
-EXE= Setup.exe
+EXE=  Setup.exe
 EXE1= blank.exe
 EXE2= R_E_S.exe
 EXE3= WPL.exe
 EXE4= Hits.exe
 EXE5= Ch_Hex.exe
 EXE6= dcinput.exe
-EXE7= long_le.exe
+EXE7= ty_dyh.exe
 
 # ALL OBJC Files
-OBJC= hello.o
+OBJC=  hello.o
 OBJC1= blanks.o
 OBJC2= R_EACH_S.o
 OBJC3= w_p_l.o
 OBJC4= histogram.o
 OBJC5= Ch_Hex.o
 OBJC6= d_c_input.o
-OBJC7= line_h.o
+OBJC7= sadfag.o
 
 # Compiler
 CC= gcc 
@@ -28,7 +28,7 @@ CFALGS= -Wall -Wextra -g
 LDFALGS= -lm 
 
 # Default Target 
-all: $(EXE) $(EXE1)  $(EXE2) $(EXE3) $(EXE4)  $(EXE5) $(EXE6) $(EXE7)
+all: $(EXE) $(EXE1)  $(EXE2) $(EXE3) $(EXE4)  $(EXE5) $(EXE6) #$(EXE7)
 
 # Links Executable.
 $(EXE): $(OBJC)
